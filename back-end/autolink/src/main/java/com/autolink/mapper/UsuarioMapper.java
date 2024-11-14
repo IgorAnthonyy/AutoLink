@@ -61,7 +61,7 @@ public class UsuarioMapper {
                 .sobrenome(UsuarioRequestDto.getSobrenome())
                 .telefone(UsuarioRequestDto.getTelefone())
                 .email(UsuarioRequestDto.getEmail())
-                .senha(UsuarioRequestDto.getSenha())
+
                 .imagem(base64Image)
                 .cep(UsuarioRequestDto.getCep())
                 .logradouro(UsuarioRequestDto.getLogradouro())

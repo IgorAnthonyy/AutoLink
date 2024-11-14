@@ -18,7 +18,6 @@ public class UsuarioCriacaoDto {
     private String sobrenome;
 
     @NotBlank
-    @Pattern(regexp = "^\\+?[0-9]{10,15}$", message = "Número de telefone deve ter entre 10 a 15 dígitos.")
     private String telefone;
 
     @NotBlank

@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Mona Sans", sans-serif;
+  background-color: #ffffff;
+  color: #000;
+  box-sizing: border-box;
+}
+button {
+  color: #3f3f3f;
+  cursor: pointer;
+  border: none;
+  font-size: 16px;
+  background-color: transparent;
+}
+a {
+  font-size: 16px;
+  color: #3f3f3f;
+  text-decoration: none;
+}

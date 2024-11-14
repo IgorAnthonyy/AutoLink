@@ -1,6 +1,7 @@
 package com.autolink.service;
 
 import com.autolink.config.security.jwt.GerenciadorTokenJwt;
+import com.autolink.exception.EmailJaCadastradoException;
 import com.autolink.service.autenticacao.dto.UsuarioTokenDto;
 import com.autolink.entities.Usuario;
 import com.autolink.mapper.UsuarioMapper;
@@ -32,8 +33,16 @@ public class UsuarioService {
                 new ResponseStatusException(HttpStatus.NOT_FOUND));
     }
     public Usuario criarUsuario(Usuario usuario) {
+        Boolean emailJaCadastrado = usuarioRepository.findByEmail(usuario.getEmail()).isPresent();
+
+        if (emailJaCadastrado) {
+            throw new EmailJaCadastradoException("Este e-mail já está cadastrado.");
+        }
+
         String senhaCriptografada = passwordEncoder.encode(usuario.getSenha());
         usuario.setSenha(senhaCriptografada);
+
+        // Salvar o usuário no banco de dados
         return usuarioRepository.save(usuario);
     }
     public Usuario atualizarUsuario(Usuario usuario) {

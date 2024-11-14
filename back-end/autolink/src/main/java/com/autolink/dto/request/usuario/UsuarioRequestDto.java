@@ -25,10 +25,6 @@ public class UsuarioRequestDto {
     @Email(message = "Email deve ser válido.")
     private String email;
 
-    @NotBlank
-    @Size(min = 4, message = "A senha deve ter pelo menos 4 caracteres.")
-    private String senha;
-
     private MultipartFile imagem;
     @NotBlank
     @Pattern(regexp = "^[0-9]{5}-[0-9]{3}$", message = "CEP deve estar no formato 12345-678.")

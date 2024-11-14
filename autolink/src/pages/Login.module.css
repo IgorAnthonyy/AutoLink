@@ -1,0 +1,7 @@
+.imagem {
+    width: 45%;
+    height: 100vh;
+    background-image: url(../assets/image\ 4.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
